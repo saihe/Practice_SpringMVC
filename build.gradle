@@ -20,6 +20,7 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	compileOnly 'org.projectlombok:lombok'
@@ -29,6 +30,19 @@ dependencies {
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
+	// 基本入れるいつものやつ
+//	annotationProcessor("org.projectlombok:lombok:1.16.20")
+//	compile("org.projectlombok:lombok:1.16.20")
+	compile 'org.slf4j:slf4j-api:1.7.25'
+	compile 'ch.qos.logback:logback-classic:1.2.3'
+	compile 'ch.qos.logback:logback-core:1.2.3'
+
+	// 適宜入れるやつ
+	compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
+	compile group: 'commons-io', name: 'commons-io', version: '2.6'
+	compile group: 'joda-time', name: 'joda-time', version: '2.9.4'
+	compileOnly("com.fasterxml.jackson.core:jackson-databind:2.9.5")
+	compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.20'
 }
 
 test {

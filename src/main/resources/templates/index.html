@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>目次</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
-<body>
-  <ol>従業員管理</ol>
-  <ol>部署管理</ol>
+<body style="display:flex">
+  <div id="menu" style="width:30%;background-color:red">メニュー</div>
+  <div id="contents" style="left:30%;width:70%;background-color:yellow" th:iniclude="/employee.html">コンテンツ</div>
 </body>
 </html>

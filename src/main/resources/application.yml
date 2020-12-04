@@ -1,9 +1,9 @@
 spring:
   datasource:
-    driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://lams-lbn.com:3306/test
-    username: Lamsadmin
-    password: Lamsadmin!
+    url: jdbc:sqlite:./db
+    driverClassName: org.sqlite.JDBC
+    user: ""
+    password: ""
     hikari:
       idle-timeout: 10000
   jpa:
@@ -12,9 +12,10 @@ spring:
       temp:
         use_jdbc_metadata_defaults: false
     show-sql: true
+    database-platform: com.enigmabridge.hibernate.dialect.SQLiteDialect
   properties:
     hibernate:
-      dialect: org.hibernate.dialect.HSQLDialect
+      dialect: com.enigmabridge.hibernate.dialect.SQLiteDialect
 logging:
   pattern:
     console: "%d{HH:mm:ss} %highlight(%-5level) %msg%n"

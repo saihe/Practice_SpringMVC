@@ -31,8 +31,6 @@ dependencies {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
 	// 基本入れるいつものやつ
-//	annotationProcessor("org.projectlombok:lombok:1.16.20")
-//	compile("org.projectlombok:lombok:1.16.20")
 	compile 'org.slf4j:slf4j-api:1.7.25'
 	compile 'ch.qos.logback:logback-classic:1.2.3'
 	compile 'ch.qos.logback:logback-core:1.2.3'
@@ -42,7 +40,9 @@ dependencies {
 	compile group: 'commons-io', name: 'commons-io', version: '2.6'
 	compile group: 'joda-time', name: 'joda-time', version: '2.9.4'
 	compileOnly("com.fasterxml.jackson.core:jackson-databind:2.9.5")
-	compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.20'
+//	compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.20'
+	compile('com.enigmabridge:hibernate4-sqlite-dialect:0.1.2')
+	runtime('org.xerial:sqlite-jdbc')
 }
 
 test {

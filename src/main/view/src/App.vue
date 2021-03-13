@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-app-bar app clipped-left>
-      <v-toolbar-title>Vuetify</v-toolbar-title>
+      <v-toolbar-title><truncate th:attr="text=${message}"/></v-toolbar-title>
     </v-app-bar>
     <v-navigation-drawer app clipped>
       <v-expansion-panels multiple>
@@ -29,23 +29,22 @@
       </v-expansion-panels>
     </v-navigation-drawer>
     <v-main>
-      <HelloWorld/>
+      <Contents/>
     </v-main>
   </v-app>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld';
+<script th:inline="javascript">
+import Contents from './components/Contents';
 
 export default {
   name: 'App',
 
   components: {
-    HelloWorld,
+    Contents,
   },
 
   data: () => ({
-    //
   }),
 };
 </script>

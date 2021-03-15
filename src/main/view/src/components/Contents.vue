@@ -7,6 +7,7 @@
         placeholder="送信内容"
       ></v-text-field>
       <v-btn color="success" @click="postIndex">送信</v-btn>
+      <span v-text="contents" />
     </v-formcd>
   </v-container>
 </template>
@@ -16,9 +17,14 @@ import axios from 'axios';
 
 export default {
   name: 'Content',
+  data() {
+    return {
+      contents: "まだAPI読んでない"
+    };
+  },
   methods: {
     postIndex() {
-      console.log("クリックイベント" + wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwthis.inputText);
+      console.log("クリックイベント" + this.inputText);
       axios.post(
         '/',
         {
@@ -26,6 +32,7 @@ export default {
         }
       ).then(res => {
         console.log(res.data);
+        this.contents = res.data.inputText;
       }).catch(res => {
         console.log(res);
       })

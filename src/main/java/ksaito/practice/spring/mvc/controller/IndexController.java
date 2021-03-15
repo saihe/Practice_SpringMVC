@@ -11,6 +11,7 @@ import ksaito.practice.spring.mvc.request.IndexRequest;
 import ksaito.practice.spring.mvc.response.IndexResponse;
 import lombok.extern.slf4j.Slf4j;
 
+@CrossOrigin
 @Slf4j
 @Controller
 public class IndexController {
@@ -20,7 +21,6 @@ public class IndexController {
     return "index";
   }
 
-  @CrossOrigin
   @PostMapping(path = "/")
   public @ResponseBody IndexResponse post(@RequestBody IndexRequest request) {
     log.info("POSTメソッドできた");

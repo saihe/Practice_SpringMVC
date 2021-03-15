@@ -34,3 +34,5 @@ out/
 .vscode/
 bin
 src/main/resources/static
+src/main/resources/templates
+

@@ -13,7 +13,8 @@ npm run build
 
 # デプロイ
 cd $root_dir
-rm -R $deploy_html_dir/*
-rm -R $deploy_static_dir/*
-cp -R $view_dir/dist/* $deploy_static_dir
+if [ -d $deploy_html_dir ]; then rm -R $deploy_html_dir/*; fi
+if [ -d $deploy_static_dir ]; then rm -R $deploy_static_dir/*; fi
+cp -R $view_dir/dist $deploy_static_dir/
+mkdir -m 777 $deploy_html_dir
 mv $deploy_static_dir/index.html $deploy_html_dir/index.html

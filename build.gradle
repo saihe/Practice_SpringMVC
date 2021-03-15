@@ -48,3 +48,11 @@ dependencies {
 test {
 	useJUnitPlatform()
 }
+
+compileJava {
+	doLast {
+		exec {
+			executable "./deploy.sh"
+		}
+	}
+}

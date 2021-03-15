@@ -1,12 +1,14 @@
-package ksaito.practice.spring.mvc.output;
+package ksaito.practice.spring.mvc.response;
 
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
 @Builder
-public class IndexOutputForm {
+@ToString
+public class IndexResponse {
   private String inputText;
 }

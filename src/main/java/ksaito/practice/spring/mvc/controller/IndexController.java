@@ -1,11 +1,14 @@
 package ksaito.practice.spring.mvc.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
 
-import ksaito.practice.spring.mvc.input.IndexInputForm;
-import ksaito.practice.spring.mvc.output.IndexOutputForm;
+import ksaito.practice.spring.mvc.request.IndexRequest;
+import ksaito.practice.spring.mvc.response.IndexResponse;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -17,9 +20,11 @@ public class IndexController {
     return "index";
   }
 
-  @GetMapping(params = "/")
-  public IndexOutputForm post(@RequestBody IndexInputForm form) {
+  @CrossOrigin
+  @PostMapping(path = "/")
+  public @ResponseBody IndexResponse post(@RequestBody IndexRequest request) {
     log.info("POSTメソッドできた");
-    return IndexOutputForm.builder().inputText(form.getInputText()).build();
+    log.info("パラメータ:" + request.toString());
+    return IndexResponse.builder().inputText(request.getInputText()).build();
   }
 }

@@ -1,14 +1,16 @@
-package ksaito.practice.spring.mvc.input;
+package ksaito.practice.spring.mvc.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
+@ToString
 @AllArgsConstructor
 @NoArgsConstructor
-public class IndexInputForm {
+public class IndexRequest {
   private String inputText;
 }
